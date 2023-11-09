@@ -1,0 +1,101 @@
+body {
+    font-family: monospace;
+    background-color: bisque;
+
+}
+
+/* main containers */
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.calc {
+    display: flex;
+    flex-direction: column;
+    background-color: #cdcdcd;
+    border: 2px solid black;
+    width: 350px;
+    height: 100%;
+    border-radius: 15px;
+}
+
+/* display */
+
+.display-containter {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid black;
+    font-size: 24px;
+    text-align: right;
+    border-radius: 5px;
+}
+
+
+
+/* keyboard */
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px
+}
+
+/* upper-buttons */
+.large-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.large-btn {
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 60px;
+    width: 100%;
+    font-size: 16px;
+
+}
+
+#clear {
+    background-color: lightcoral;
+}
+
+#delete {
+    background-color: lightblue;
+}
+
+
+
+/* lower-buttons */
+
+.small-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.num-btn,
+.func-btn {
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 20px;
+    background-color: white;
+
+}
+
+.num-btn:hover,
+.func-btn:hover,
+.large-btn:hover {
+    opacity: 70%;
+    cursor: pointer;
+}
+
+.credits {
+    font-weight: 600;
+}
