@@ -75,10 +75,6 @@ funcButtons.forEach((button) => {
             numbers.push(currentNumber);
             let firstNumber = (numbers.length == 2) ? numbers[numbers.length - 2] : result;
             let secondNumber = numbers[numbers.length - 1]
-            console.log('new_log');
-            console.log(numbers);
-            console.log('f' + firstNumber);
-            console.log('o' + operator);
             result = operate(firstNumber, secondNumber, operator);
             display.textContent = result;
             currentNumber = '';
@@ -86,7 +82,8 @@ funcButtons.forEach((button) => {
         } else if (numbers.length == 0) {
             operator = button.id;
             numbers.push(currentNumber);
-            currentNumber = ''
+            currentNumber = '';
+
         } else if (numbers.length == 1) {
             numbers.push(currentNumber);
             result = operate(numbers[0], currentNumber, operator);
@@ -94,12 +91,16 @@ funcButtons.forEach((button) => {
             currentNumber = '';
             operator = button.id;
 
+
         } else if (numbers.length > 1 && currentNumber != '') {
             numbers.push(currentNumber);
             result = operate(result, currentNumber, operator);
             display.textContent = result;
             currentNumber = '';
             operator = button.id;
+
+        } else if (numbers.length > 1 && operator) {
+            operator = button.id
         }
     })
 
@@ -118,7 +119,7 @@ deleteButton.addEventListener('click', () => {
     if (currentNumber == 0) {
 
     } else if (currentNumber.length == 1) {
-        currentNumber = 0;
+        currentNumber = '';
         displayValue = 0;
         display.textContent = displayValue;
 
